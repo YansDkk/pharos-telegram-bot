@@ -334,7 +334,7 @@ def send_transaction(private_key, to_address, value=0.001):
 
     signed_tx = w3.eth.account.sign_transaction(tx, private_key)
 
-    tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+    tx_hash = w3.eth.send_raw_transaction(signed_tx.raw_transaction)
 
     w3.eth.wait_for_transaction_receipt(tx_hash)
 
@@ -402,7 +402,7 @@ def swap_token(private_key):
 
     signed_approve = w3.eth.account.sign_transaction(approve_tx, private_key)
 
-    w3.eth.send_raw_transaction(signed_approve.rawTransaction)
+    w3.eth.send_raw_transaction(signed_approve.raw_transaction)
 
     time.sleep(5)
 
@@ -444,7 +444,7 @@ def swap_token(private_key):
 
     signed_tx = w3.eth.account.sign_transaction(tx, private_key)
 
-    tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+    tx_hash = w3.eth.send_raw_transaction(signed_tx.raw_transaction)
 
     print(f"✅ Swap sukses: {EXPLORER}{tx_hash.hex()}")
 
@@ -490,7 +490,7 @@ def add_liquidity(w3, private_key, token0_address, token1_address, amount0, amou
 
     signed_tx1 = w3.eth.account.sign_transaction(tx1, private_key)
 
-    w3.eth.send_raw_transaction(signed_tx1.rawTransaction)
+    w3.eth.send_raw_transaction(signed_tx1.raw_transaction)
 
     time.sleep(3)
 
@@ -510,7 +510,7 @@ def add_liquidity(w3, private_key, token0_address, token1_address, amount0, amou
 
     signed_tx2 = w3.eth.account.sign_transaction(tx2, private_key)
 
-    w3.eth.send_raw_transaction(signed_tx2.rawTransaction)
+    w3.eth.send_raw_transaction(signed_tx2.raw_transaction)
 
     time.sleep(3)
 
@@ -568,7 +568,7 @@ def add_liquidity(w3, private_key, token0_address, token1_address, amount0, amou
 
     signed_tx3 = w3.eth.account.sign_transaction(tx3, private_key)
 
-    tx_hash3 = w3.eth.send_raw_transaction(signed_tx3.rawTransaction)
+    tx_hash3 = w3.eth.send_raw_transaction(signed_tx3.raw_transaction)
 
     print("💧 LP Mint dikirim...")
 
