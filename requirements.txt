@@ -1,1 +1,6 @@
+web3==6.10.0
+requests
+eth_account
+colorama
+rich
 setuptools<81
